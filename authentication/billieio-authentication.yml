@@ -1,0 +1,22 @@
+generated: '2026-09-28'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.billie.io/reference/authentication.md
+sources:
+- https://docs.billie.io/reference/authentication.md
+- https://docs.billie.io/reference/oauth_token_create.md
+- https://docs.billie.io/reference/oauth_token_validate.md
+- https://docs.billie.io/reference/oauth_token_revoke.md
+description: OAuth 2.0 client‑credentials flow with Bearer token in the Authorization header.
+schemes:
+- type: oauth2
+  name: OAuth2
+  evidence: This API uses OAuth 2.0 for secure authentication.
+  flows:
+  - client_credentials
+  token_url: https://paella-sandbox.billie.io/api/v2/oauth/token
+  how_to_obtain: 'Obtain a JWT access token by sending a POST request to the token endpoint with `grant_type=client_credentials`, `client_id`
+    and `client_secret` in the request body. The returned `access_token` is then sent in the `Authorization: Bearer <token>` header on subsequent
+    API calls.'
+note: The same token endpoint is also available on the production server at https://paella.billie.io/api/v2/oauth/token.
+docs: https://docs.billie.io/reference/authentication.md

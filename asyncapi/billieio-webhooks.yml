@@ -1,0 +1,54 @@
+generated: '2026-09-28'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.billie.io/reference/webhooks.md
+sources:
+- https://docs.billie.io/reference/webhooks.md
+- https://docs.billie.io/reference/webhooks
+- https://docs.billie.io/docs/abandoned-cart.md
+description: Webhooks are not available by default; merchants must activate them via their sales representative.
+events:
+- event: order_waiting
+  description: Order is not approved waiting for manual confirmation.
+- event: order_created
+  description: Order is created.
+- event: order_shipped
+  description: Order is shipped.
+- event: order_canceled
+  description: When the order is canceled.
+- event: order_paid_out
+  description: When the order is paid out.
+- event: invoice_created
+  description: When the invoice is created.
+- event: invoice_paid_out
+  description: When the invoice is paid out.
+- event: invoice_late
+  description: When the invoice payback is late.
+- event: order_approved
+  description: An order that was in waiting state and after manual check has been approved.
+- event: order_declined
+  description: An order that was in waiting state and after manual check has been declined.
+- event: dunning
+  description: Dunning process has been started.
+- event: promise_to_pay
+  description: Debtor stated a promise to pay.
+- event: instalment_plan
+  description: Debtor asked for instalment plan.
+- event: dispute
+  description: Debtor disputed claim.
+- event: dunning_paused
+  description: Dunning process has been paused.
+- event: archived
+  description: Archived cases, mostly unsuccessful.
+- event: closed
+  description: Closed, because of merchant or debtor payment.
+- event: dca
+  description: Case has been handed over to a collection agency.
+- event: payment
+  description: When an Invoice is paid back partially or fully a message will be sent.
+- event: clawback
+  description: The debtor clawedback the direct debit payment.
+delivery:
+  auth: 'One of the API Key headers can be used, e.g. `Authorization: Basic THE_API_KEY`, `X-Api-Key: THE_API_KEY`, or a custom header such as
+    `X-Another-Custom-Header: THE_API_KEY`.'
+docs: https://docs.billie.io/reference/webhooks.md

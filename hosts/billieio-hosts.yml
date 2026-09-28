@@ -1,0 +1,128 @@
+generated: '2026-09-28'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 9
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - docs
+  - other
+  - portal
+  - security
+  - status
+  - support
+  - website
+hosts:
+- host: api.billie.io
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: billie.io
+  role: api
+  relation: own
+- host: billie.io
+  found_by:
+  - pointer
+  types:
+  - Security
+  serves: []
+  registrable_domain: billie.io
+  role: security
+  relation: own
+- host: dashboard.billie.io
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: billie.io
+  role: other
+  relation: own
+- host: developers.billie.io
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types: []
+  serves: []
+  title: Billie Docs
+  status: 200
+  registrable_domain: billie.io
+  role: portal
+  relation: own
+- host: docs.billie.io
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - APIReference
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: billie.io
+  role: docs
+  relation: own
+- host: help.billie.io
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Support
+  serves:
+  - docs
+  registrable_domain: billie.io
+  role: support
+  relation: own
+- host: portal.billie.io
+  found_by:
+  - probed
+  - site-links
+  - docs-index
+  - well-known
+  types: []
+  serves:
+  - docs
+  registrable_domain: billie.io
+  role: other
+  relation: own
+- host: status.billie.io
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - well-known
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: billie.io
+  role: status
+  relation: own
+- host: www.billie.io
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: billie.io
+  role: website
+  relation: own
