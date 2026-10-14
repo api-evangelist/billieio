@@ -1,0 +1,55 @@
+generated: '2026-10-14'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/billieio-billie-direct-api-openapi.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: ErrorsObject
+coverage:
+  operations: 18
+  statuses_declared: 6
+problems:
+- status: 400
+  title: Bad Request
+  description: Invalid Request Data
+  operations: 12
+  media_types:
+  - application/json
+  schema: ErrorsObject
+- status: 401
+  title: Unauthorized
+  description: Unauthorized request or invalid credentials
+  operations: 16
+  media_types:
+  - application/json
+  schema: ErrorsObject
+- status: 403
+  title: Forbidden
+  description: Forbidden Request. The operation cannot be completed.
+  operations: 5
+  media_types:
+  - application/json
+  schema: ErrorsObject
+- status: 404
+  title: Not Found
+  description: Resource Not Found
+  operations: 9
+  media_types:
+  - application/json
+  schema: ErrorsObject
+- status: 500
+  title: Internal Server Error
+  description: Unexpected Server Error
+  operations: 15
+  media_types:
+  - application/json
+  schema: ErrorsObject
+- status: default
+  title: null
+  description: Unexpected Server Error
+  operations: 2
+  media_types:
+  - application/json
+  schema: ErrorsObject

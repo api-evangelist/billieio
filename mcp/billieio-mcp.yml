@@ -1,7 +1,103 @@
-generated: '2026-09-28'
-method: none
-source: preflight
+generated: '2026-10-14'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/billieio-billie-direct-api-openapi.yml
+status: candidate
 deployment:
   mode: none
-  auth: none
+  auth: unknown
   verified: derived
+note: No MCP server was found. No probe result in the dossier. Candidate tools below are derived from the 18 operation(s) in the provider's own
+  OpenAPI (18 listed); they describe what a server WOULD expose, not one that exists.
+tools:
+- name: create_checkout_session_v2
+  operationId: create_checkout_session_v2
+  method: POST
+  path: /checkout-sessions
+  description: Checkout Session Create
+- name: get_checkout_session_authorization_v2
+  operationId: get_checkout_session_authorization_v2
+  method: GET
+  path: /checkout-sessions/{sessionId}/authorization
+  description: Get Authorization
+- name: confirm_authorization_v2
+  operationId: confirm_authorization_v2
+  method: PUT
+  path: /checkout-sessions/{sessionId}/confirm
+  description: Checkout Session Confirm
+- name: create_hpp_checkout_session_v2
+  operationId: create_hpp_checkout_session_v2
+  method: POST
+  path: /hpp-checkout-sessions
+  description: Hpp Checkout Session Create
+- name: invoice_create
+  operationId: invoice_create
+  method: POST
+  path: /invoices
+  description: Create Invoice
+- name: get_invoice
+  operationId: get_invoice
+  method: GET
+  path: /invoices/{captureId}
+  description: Get Invoice
+- name: invoice_cancel_v2
+  operationId: invoice_cancel_v2
+  method: DELETE
+  path: /invoices/{captureId}
+  description: Cancel Invoice
+- name: invoice_payment_confirm
+  operationId: invoice_payment_confirm
+  method: POST
+  path: /invoices/{captureId}/confirm-payment
+  description: Confirm Invoice Payment
+- name: create_credit_note
+  operationId: create_credit_note
+  method: POST
+  path: /invoices/{captureId}/credit-notes
+  description: Create Credit Note
+- name: invoice_update
+  operationId: invoice_update
+  method: POST
+  path: /invoices/{captureId}/update-details
+  description: Update Invoice
+- name: get_legal_forms
+  operationId: get_legal_forms
+  method: GET
+  path: /legal-forms
+  description: Get Legal Forms
+- name: oauth_token_validate
+  operationId: oauth_token_validate
+  method: GET
+  path: /oauth/authorization
+  description: Validate OAuth Token
+- name: oauth_token_create
+  operationId: oauth_token_create
+  method: POST
+  path: /oauth/token
+  description: Request OAuth Token
+- name: oauth_token_revoke
+  operationId: oauth_token_revoke
+  method: POST
+  path: /oauth/token/revoke
+  description: Revoke OAuth Token
+- name: order_create_v2
+  operationId: order_create_v2
+  method: POST
+  path: /orders
+  description: Create Order
+- name: order_get_details_v2
+  operationId: order_get_details_v2
+  method: GET
+  path: /orders/{id}
+  description: Get Order Details
+- name: order_update_v2
+  operationId: order_update_v2
+  method: POST
+  path: /orders/{id}
+  description: Update Order
+- name: order_cancel_v2
+  operationId: order_cancel_v2
+  method: POST
+  path: /orders/{id}/cancel
+  description: Cancel Order

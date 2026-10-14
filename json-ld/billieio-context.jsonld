@@ -1,0 +1,464 @@
+{
+  "@context": {
+    "@vocab": "https://billie.io/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "billieio": "https://billie.io/schema#",
+    "OauthClientCredentialsGrantRequestBodyParams": "billieio:OauthClientCredentialsGrantRequestBodyParams",
+    "grant_type": {
+      "@id": "billieio:grant_type",
+      "@type": "xsd:string"
+    },
+    "client_id": {
+      "@id": "billieio:client_id",
+      "@type": "@id"
+    },
+    "client_secret": {
+      "@id": "billieio:client_secret",
+      "@type": "xsd:string"
+    },
+    "OauthTokenResponseBody": "billieio:OauthTokenResponseBody",
+    "token_type": {
+      "@id": "billieio:token_type",
+      "@type": "xsd:string"
+    },
+    "expires_in": {
+      "@id": "billieio:expires_in",
+      "@type": "xsd:integer"
+    },
+    "access_token": {
+      "@id": "billieio:access_token",
+      "@type": "xsd:string"
+    },
+    "ErrorsObject": "billieio:ErrorsObject",
+    "errors": {
+      "@id": "billieio:errors",
+      "@container": "@list"
+    },
+    "OrderStateV2": "billieio:OrderStateV2",
+    "OrderDeclineReason": "billieio:OrderDeclineReason",
+    "Address": "billieio:Address",
+    "house_number": {
+      "@id": "billieio:house_number",
+      "@type": "@id"
+    },
+    "street": {
+      "@id": "billieio:street",
+      "@type": "@id"
+    },
+    "postal_code": {
+      "@id": "billieio:postal_code",
+      "@type": "@id"
+    },
+    "city": {
+      "@id": "billieio:city",
+      "@type": "@id"
+    },
+    "country": {
+      "@id": "billieio:country",
+      "@type": "@id"
+    },
+    "OrderInvoiceResponse": "billieio:OrderInvoiceResponse",
+    "uuid": {
+      "@id": "billieio:uuid",
+      "@type": "@id"
+    },
+    "invoice_number": {
+      "@id": "billieio:invoice_number",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "billieio:state",
+      "@type": "xsd:string"
+    },
+    "payout_amount": {
+      "@id": "billieio:payout_amount",
+      "@type": "xsd:decimal"
+    },
+    "amount": {
+      "@id": "billieio:amount",
+      "@type": "xsd:decimal"
+    },
+    "amount_net": {
+      "@id": "billieio:amount_net",
+      "@type": "xsd:decimal"
+    },
+    "amount_tax": {
+      "@id": "billieio:amount_tax",
+      "@type": "xsd:decimal"
+    },
+    "outstanding_amount": {
+      "@id": "billieio:outstanding_amount",
+      "@type": "xsd:decimal"
+    },
+    "pending_merchant_payment_amount": {
+      "@id": "billieio:pending_merchant_payment_amount",
+      "@type": "xsd:decimal"
+    },
+    "pending_cancellation_amount": {
+      "@id": "billieio:pending_cancellation_amount",
+      "@type": "xsd:decimal"
+    },
+    "fee_amount": {
+      "@id": "billieio:fee_amount",
+      "@type": "xsd:decimal"
+    },
+    "fee_rate": {
+      "@id": "billieio:fee_rate",
+      "@type": "xsd:decimal"
+    },
+    "due_date": {
+      "@id": "billieio:due_date",
+      "@type": "xsd:date"
+    },
+    "created_at": {
+      "@id": "billieio:created_at",
+      "@type": "xsd:date"
+    },
+    "BankAccount": "billieio:BankAccount",
+    "iban": {
+      "@id": "billieio:iban",
+      "@type": "@id"
+    },
+    "bic": {
+      "@id": "billieio:bic",
+      "@type": "@id"
+    },
+    "Debtor": "billieio:Debtor",
+    "name": {
+      "@id": "billieio:name",
+      "@type": "xsd:string"
+    },
+    "company_address": {
+      "@id": "billieio:company_address",
+      "@type": "@id"
+    },
+    "billing_address": {
+      "@id": "billieio:billing_address",
+      "@type": "@id"
+    },
+    "bank_account": {
+      "@id": "billieio:bank_account",
+      "@type": "@id"
+    },
+    "external_data": {
+      "@id": "billieio:external_data",
+      "@type": "@id"
+    },
+    "DebtorExternalData": "billieio:DebtorExternalData",
+    "merchant_customer_id": {
+      "@id": "billieio:merchant_customer_id",
+      "@type": "@id"
+    },
+    "industry_sector": {
+      "@id": "billieio:industry_sector",
+      "@type": "xsd:string"
+    },
+    "address": {
+      "@id": "billieio:address",
+      "@type": "@id"
+    },
+    "Order": "billieio:Order",
+    "external_code": {
+      "@id": "billieio:external_code",
+      "@type": "xsd:string"
+    },
+    "decline_reason": {
+      "@id": "billieio:decline_reason",
+      "@type": "@id"
+    },
+    "unshipped_amount": {
+      "@id": "billieio:unshipped_amount",
+      "@type": "@id"
+    },
+    "duration": {
+      "@id": "billieio:duration",
+      "@type": "@id"
+    },
+    "delivery_address": {
+      "@id": "billieio:delivery_address",
+      "@type": "@id"
+    },
+    "debtor": {
+      "@id": "billieio:debtor",
+      "@type": "@id"
+    },
+    "invoices": {
+      "@id": "billieio:invoices",
+      "@container": "@list"
+    },
+    "selected_payment_method": {
+      "@id": "billieio:selected_payment_method",
+      "@type": "xsd:string"
+    },
+    "payment_methods": {
+      "@id": "billieio:payment_methods",
+      "@type": "@id"
+    },
+    "PaymentMethodType": "billieio:PaymentMethodType",
+    "PaymentMethod": "billieio:PaymentMethod",
+    "type": {
+      "@id": "billieio:type",
+      "@type": "@id"
+    },
+    "data": {
+      "@id": "billieio:data"
+    },
+    "TaxedMoney": "billieio:TaxedMoney",
+    "gross": {
+      "@id": "billieio:gross",
+      "@type": "xsd:decimal"
+    },
+    "net": {
+      "@id": "billieio:net",
+      "@type": "xsd:decimal"
+    },
+    "tax": {
+      "@id": "billieio:tax",
+      "@type": "xsd:decimal"
+    },
+    "AmountDTO": "billieio:AmountDTO",
+    "CreateOrderAddressRequest": "billieio:CreateOrderAddressRequest",
+    "addition": {
+      "@id": "billieio:addition",
+      "@type": "@id"
+    },
+    "organization_name": {
+      "@id": "billieio:organization_name",
+      "@type": "@id"
+    },
+    "LegacyCreateOrderDebtorCompanyRequest": "billieio:LegacyCreateOrderDebtorCompanyRequest",
+    "tax_id": {
+      "@id": "billieio:tax_id",
+      "@type": "@id"
+    },
+    "tax_number": {
+      "@id": "billieio:tax_number",
+      "@type": "@id"
+    },
+    "registration_court": {
+      "@id": "billieio:registration_court",
+      "@type": "@id"
+    },
+    "registration_number": {
+      "@id": "billieio:registration_number",
+      "@type": "@id"
+    },
+    "subindustry_sector": {
+      "@id": "billieio:subindustry_sector",
+      "@type": "@id"
+    },
+    "employees_number": {
+      "@id": "billieio:employees_number",
+      "@type": "@id"
+    },
+    "legal_form": {
+      "@id": "billieio:legal_form",
+      "@type": "@id"
+    },
+    "established_customer": {
+      "@id": "billieio:established_customer",
+      "@type": "xsd:boolean"
+    },
+    "address_addition": {
+      "@id": "billieio:address_addition",
+      "@type": "@id"
+    },
+    "address_house_number": {
+      "@id": "billieio:address_house_number",
+      "@type": "@id"
+    },
+    "address_street": {
+      "@id": "billieio:address_street",
+      "@type": "@id"
+    },
+    "address_city": {
+      "@id": "billieio:address_city",
+      "@type": "@id"
+    },
+    "address_postal_code": {
+      "@id": "billieio:address_postal_code",
+      "@type": "@id"
+    },
+    "address_country": {
+      "@id": "billieio:address_country",
+      "@type": "@id"
+    },
+    "organisation_type": {
+      "@id": "billieio:organisation_type",
+      "@type": "xsd:string"
+    },
+    "CreateOrderLineItemRequest": "billieio:CreateOrderLineItemRequest",
+    "external_id": {
+      "@id": "billieio:external_id",
+      "@type": "@id"
+    },
+    "title": {
+      "@id": "billieio:title",
+      "@type": "@id"
+    },
+    "description": {
+      "@id": "billieio:description",
+      "@type": "xsd:string"
+    },
+    "quantity": {
+      "@id": "billieio:quantity",
+      "@type": "xsd:decimal"
+    },
+    "category": {
+      "@id": "billieio:category",
+      "@type": "@id"
+    },
+    "brand": {
+      "@id": "billieio:brand",
+      "@type": "@id"
+    },
+    "gtin": {
+      "@id": "billieio:gtin",
+      "@type": "@id"
+    },
+    "mpn": {
+      "@id": "billieio:mpn",
+      "@type": "@id"
+    },
+    "product_url": {
+      "@id": "billieio:product_url",
+      "@type": "@id"
+    },
+    "image_url": {
+      "@id": "billieio:image_url",
+      "@type": "@id"
+    },
+    "quantity_unit": {
+      "@id": "billieio:quantity_unit",
+      "@type": "@id"
+    },
+    "tax_rate": {
+      "@id": "billieio:tax_rate",
+      "@type": "xsd:decimal"
+    },
+    "total_discount_amount": {
+      "@id": "billieio:total_discount_amount",
+      "@type": "xsd:decimal"
+    },
+    "unit_price": {
+      "@id": "billieio:unit_price",
+      "@type": "xsd:decimal"
+    },
+    "HppCheckoutSessionECommerce": "billieio:HppCheckoutSessionECommerce",
+    "channel": {
+      "@id": "billieio:channel",
+      "@type": "xsd:string"
+    },
+    "comment": {
+      "@id": "billieio:comment",
+      "@type": "@id"
+    },
+    "order_id": {
+      "@id": "billieio:order_id",
+      "@type": "@id"
+    },
+    "debtor_company": {
+      "@id": "billieio:debtor_company",
+      "@type": "@id"
+    },
+    "debtor_person": {
+      "@id": "billieio:debtor_person"
+    },
+    "line_items": {
+      "@id": "billieio:line_items",
+      "@container": "@list"
+    },
+    "merchant_urls": {
+      "@id": "billieio:merchant_urls"
+    },
+    "HppCheckoutSessionTelesales": "billieio:HppCheckoutSessionTelesales",
+    "HppCheckoutSessionInstore": "billieio:HppCheckoutSessionInstore",
+    "AuthorizationAmount": "billieio:AuthorizationAmount",
+    "OrderState": "billieio:OrderState",
+    "AddressStrictPostalCode": "billieio:AddressStrictPostalCode",
+    "CreateOrderDebtorCompanyRequest": "billieio:CreateOrderDebtorCompanyRequest",
+    "CreateOrderRequest": "billieio:CreateOrderRequest",
+    "additional_billing_emails": {
+      "@id": "billieio:additional_billing_emails",
+      "@container": "@list"
+    },
+    "CreateOrderDebtorPersonRequest": "billieio:CreateOrderDebtorPersonRequest",
+    "salutation": {
+      "@id": "billieio:salutation",
+      "@type": "xsd:string"
+    },
+    "first_name": {
+      "@id": "billieio:first_name",
+      "@type": "@id"
+    },
+    "last_name": {
+      "@id": "billieio:last_name",
+      "@type": "@id"
+    },
+    "phone_number": {
+      "@id": "billieio:phone_number",
+      "@type": "@id"
+    },
+    "email": {
+      "@id": "billieio:email",
+      "@type": "xsd:string"
+    },
+    "locale": {
+      "@id": "billieio:locale",
+      "@type": "xsd:string"
+    },
+    "UpdateOrderRequest": "billieio:UpdateOrderRequest",
+    "GetInvoiceResponse": "billieio:GetInvoiceResponse",
+    "ShippingInfo": "billieio:ShippingInfo",
+    "return_shipping_company": {
+      "@id": "billieio:return_shipping_company"
+    },
+    "return_tracking_number": {
+      "@id": "billieio:return_tracking_number"
+    },
+    "return_tracking_url": {
+      "@id": "billieio:return_tracking_url"
+    },
+    "shipping_company": {
+      "@id": "billieio:shipping_company"
+    },
+    "shipping_method": {
+      "@id": "billieio:shipping_method"
+    },
+    "tracking_number": {
+      "@id": "billieio:tracking_number"
+    },
+    "tracking_url": {
+      "@id": "billieio:tracking_url"
+    },
+    "LineItemsRequest": "billieio:LineItemsRequest",
+    "amount_gross": {
+      "@id": "billieio:amount_gross",
+      "@type": "xsd:decimal"
+    },
+    "CreateInvoiceRequest": "billieio:CreateInvoiceRequest",
+    "orders": {
+      "@id": "billieio:orders",
+      "@container": "@list"
+    },
+    "invoice_url": {
+      "@id": "billieio:invoice_url",
+      "@type": "@id"
+    },
+    "shipping_info": {
+      "@id": "billieio:shipping_info",
+      "@type": "@id"
+    },
+    "UpdateInvoiceRequest": "billieio:UpdateInvoiceRequest",
+    "CreateCreditNoteRequest": "billieio:CreateCreditNoteRequest"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Billieio API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Billieio's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-14) from openapi/billieio-billie-direct-api-openapi.yml.",
+  "dcterms:created": "2026-10-14",
+  "dcterms:source": [
+    "openapi/billieio-billie-direct-api-openapi.yml"
+  ]
+}

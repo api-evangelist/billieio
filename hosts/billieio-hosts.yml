@@ -1,30 +1,19 @@
-generated: '2026-09-28'
+generated: '2026-10-14'
 method: derived
 source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
 generator: derive-hosts.py
 summary:
-  hosts: 9
-  own: 9
+  hosts: 5
+  own: 5
   other_domain: 0
   platform: 0
   roles:
-  - api
   - docs
-  - other
-  - portal
   - security
   - status
   - support
   - website
 hosts:
-- host: api.billie.io
-  found_by:
-  - contract-discovery
-  types: []
-  serves: []
-  registrable_domain: billie.io
-  role: api
-  relation: own
 - host: billie.io
   found_by:
   - pointer
@@ -34,39 +23,10 @@ hosts:
   registrable_domain: billie.io
   role: security
   relation: own
-- host: dashboard.billie.io
-  found_by:
-  - probed
-  - site-links
-  - contract-discovery
-  - well-known
-  types: []
-  serves: []
-  registrable_domain: billie.io
-  role: other
-  relation: own
-- host: developers.billie.io
-  found_by:
-  - probed
-  - site-links
-  - namespace-probe
-  - well-known
-  types: []
-  serves: []
-  title: Billie Docs
-  status: 200
-  registrable_domain: billie.io
-  role: portal
-  relation: own
 - host: docs.billie.io
   found_by:
   - pointer
   - apis[]
-  - probed
-  - site-links
-  - docs-index
-  - contract-discovery
-  - well-known
   types:
   - APIReference
   - Documentation
@@ -78,36 +38,18 @@ hosts:
 - host: help.billie.io
   found_by:
   - pointer
-  - probed
-  - site-links
-  - docs-index
-  - contract-discovery
-  - well-known
+  - vendor-detect
   types:
   - Support
   serves:
-  - docs
+  - cdn
+  vendor: cloudflare
   registrable_domain: billie.io
   role: support
-  relation: own
-- host: portal.billie.io
-  found_by:
-  - probed
-  - site-links
-  - docs-index
-  - well-known
-  types: []
-  serves:
-  - docs
-  registrable_domain: billie.io
-  role: other
   relation: own
 - host: status.billie.io
   found_by:
   - pointer
-  - probed
-  - site-links
-  - well-known
   types:
   - StatusPage
   serves: []
@@ -117,9 +59,6 @@ hosts:
 - host: www.billie.io
   found_by:
   - pointer
-  - probed
-  - contract-discovery
-  - well-known
   types:
   - Website
   serves: []

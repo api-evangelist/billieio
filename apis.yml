@@ -1,27 +1,17 @@
 aid: billieio
-
 name: Billieio
-
 description: Billie is a fintech platform that provides B2B payment solutions, enabling businesses to buy now and pay later, invoice financing,
   and flexible checkout options. It serves over 1.3 million buyers and 9,000 merchants across Europe, processing billions in transaction volume.
   The service includes integration via APIs for order creation, payment processing, and refunds, with support for multiple payment methods and
   partner integrations.
-
 url: https://raw.githubusercontent.com/api-evangelist/billieio/refs/heads/main/apis.yml
-
 x-type: company
-
 x-source: harvest:secondary-market
-
 x-tier: profiled
 x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
-
 specificationVersion: '0.20'
-
 created: '2026-09-28'
-
 modified: '2026-09-28'
-
 x-docs-platform: readme
 x-docs-platform-confidence: high
 x-docs-platform-checked: 2026-10-03
@@ -36,14 +26,28 @@ tags_raw:
 - B2B
 - API
 - Europe
-
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-
 common:
+- type: AgenticAccess
+  url: agentic-access/billieio-agentic-access.yml
+- type: Spectral
+  url: rules/billieio-rules.yml
+- type: JSONLD
+  url: json-ld/billieio-context.jsonld
+- type: Vocabulary
+  url: vocabulary/billieio-vocabulary.yml
+- type: DataModel
+  url: data-model/billieio-data-model.yml
+- type: ErrorCatalog
+  url: errors/billieio-problem-types.yml
+- type: Conformance
+  url: conformance/billieio-conformance.yml
+- type: OAuthScopes
+  url: scopes/billieio-scopes.yml
 - type: SecurityTxt
   url: well-known/billieio-www-security.txt
 - type: Vendors
@@ -78,14 +82,47 @@ common:
   url: security/billieio-domain-security.yml
 - type: Website
   url: https://www.billie.io
-
 apis:
 - name: Billie API
   description: API reference for Billie payment integration
   humanURL: https://docs.billie.io/reference
   baseURL: null
   aid: billieio:billie-api
-
+- aid: billieio:billieio-billie-direct-api
+  name: Billieio Authentication API
+  description: "This API uses OAuth 2.0 for secure authentication. \n\nDifferent keys are used for the `sandbox` and `production` environments.\
+    \ Both systems operate completely independent, however both show largely \nthe same response behaviour. The major difference is that sandbox\
+    \ does not trigger any payment events (payout to merchant, repayment \nby debtors, etc.). To obtain your credentials for both environments\
+    \ please contact Billie's merchant integration support \nvia telephone ( [+49-30-120872485](tel:+4930120872485) ) or email ( pad@billie.io\
+    \ ).\n\nThis authentication mechanism is based on the OAuth 2.0 protocol and requires a Client ID and a Client Secret Key (client credentials).\n\
+    \nBefore triggering any API call, a so called JSON web token (JWT) must be requested through the `oauth/token` endpoint described below\n\
+    by using your client credentials.\nIn all following requests / API calls, this JWT token is used for authorization and must be passed as type\
+    \ \"Bearer\" token \nin the Authorization header. Example: `Authorization: Bearer eyJhbGciOiJIUzI...`\n\nRenewal of the bearer token / JWT:\n\
+    \nEvery token expires automatically after 8 hours. After expiration of an existing token a new token must be requested through the \n`POST\
+    \ oauth/token` endpoint. Implementation best practice is to always try sending API calls first with the previously stored token. \nSending\
+    \ API calls with an expired token will be answered with an `HTTP 401` (Unauthorized request or invalid credentials) response.\n\nAfter receiving\
+    \ the `401` error you will simply need to request a new token by triggering again the `oauth/token` endpoint. \nAfter receiving the new valid\
+    \ token, resend the previously failed API call. This procedure allows for optimal API interaction, \nensures reduced system load on both ends,\
+    \ and is easy to implement as you don't need to keep track of token expiration times.\n\nThere is another endpoint available for checking\
+    \ if a token is still valid or not: `GET oauth/token`."
+  humanURL: https://docs.billie.io/reference
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/billieio-billie-direct-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/billieio-hpp-checkout-session-ecommerce-schema.json
+  - type: JSONSchema
+    url: json-schema/billieio-hpp-checkout-session-telesales-schema.json
+  - type: JSONSchema
+    url: json-schema/billieio-hpp-checkout-session-instore-schema.json
+  - type: JSONSchema
+    url: json-schema/billieio-get-invoice-response-schema.json
+  - type: JSONSchema
+    url: json-schema/billieio-order-schema.json
+  - type: JSONSchema
+    url: json-schema/billieio-create-order-request-schema.json
 x-coverage:
   state: gated
   reason: partner-login
@@ -106,3 +143,8 @@ x-enrichment:
   artifacts_added: 13
   pass: modular-v1
   engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
+x-readme-harvest:
+  date: '2026-10-14'
+  ops: 18
+  tool: harvest-readme-openapi.py
+  portal: https://docs.billie.io
