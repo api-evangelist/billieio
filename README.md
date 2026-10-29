@@ -64,5 +64,144 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Billieio is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/billieio
+Billie is a fintech platform that provides B2B payment solutions, enabling businesses to buy now and pay later, invoice financing, and flexible checkout options. It serves over 1.3 million buyers and 9,000 merchants across Europe, processing billions in transaction volume. The service includes integration via APIs for order creation, payment processing, and refunds, with support for multiple payment methods and partner integrations.
+
+**Areas:** Fintech · Payments · B2B · Europe
+
+## Billieio on APIs.io
+
+Everything profiled for Billieio is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/billieio/](https://apis.io/providers/billieio/)** — or go straight to one of the APIs or properties below.
+
+### APIs (6)
+
+- [Billie API](https://apis.io/apis/billieio/billie-api/) — API reference for Billie payment integration
+- [Billieio Authentication API](https://apis.io/apis/billieio/billieio-authentication-api/) — This API uses OAuth 2.0 for secure authentication. Different keys are used for the `sandbox` and `production` environments. Both systems operate completely…
+- [Billieio Back-end Order Creation API](https://apis.io/apis/billieio/billieio-back-end-order-creation-api/) — The Back-end Order Creation API from Billieio — 2 operation(s) for back-end order creation.
+- [Billieio Captures API](https://apis.io/apis/billieio/billieio-captures-api/) — The Captures API from Billieio — 5 operation(s) for captures.
+- [Billieio Front-end Order Creation API](https://apis.io/apis/billieio/billieio-front-end-order-creation-api/) — ## To integrate the Billie checkout widget, the following steps are required: 1. Add the Billie checkout widget bundle to your checkout page 2. Provide…
+- [Billieio Order Management API](https://apis.io/apis/billieio/billieio-order-management-api/) — The Order Management API from Billieio — 2 operation(s) for order management.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Billieio Webhooks](https://apis.io/asyncapis/billieio/billieio-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [billieio-mcp.yml](https://apis.io/servers/billieio/billieio-mcp-yml/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Billieio Agentic Access](https://apis.io/agentic-access/billieio/billieio-agentic-access/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [Order Creation Request](https://apis.io/schemas/billieio/billieio-create-order-request/)
+- [Get Invoice Response](https://apis.io/schemas/billieio/billieio-get-invoice-response/)
+- [Hpp Checkout Session Create Request](https://apis.io/schemas/billieio/billieio-hpp-checkout-session-ecommerce/)
+- [Hpp Checkout Session Create Request](https://apis.io/schemas/billieio/billieio-hpp-checkout-session-instore/)
+- [Hpp Checkout Session Create Request](https://apis.io/schemas/billieio/billieio-hpp-checkout-session-telesales/)
+- [Order Entity](https://apis.io/schemas/billieio/billieio-order/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Billieio Context](https://apis.io/jsonld/billieio/billieio-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Billieio API Rules](https://apis.io/rules/billieio/billieio-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Billieio Authentication](https://apis.io/security/billieio/billieio-authentication/)
+- [Billieio Domain Security](https://apis.io/security/billieio/billieio-domain-security/)
+- [Billieio Vulnerability Disclosure](https://apis.io/security/billieio/billieio-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Billieio Scopes](https://apis.io/scopes/billieio/billieio-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.billie.io)
+- [Documentation](https://docs.billie.io/)
+- [API reference](https://docs.billie.io/reference)
+- [Support](https://help.billie.io/s/?language=en_US)
+- [Security](https://billie.io/coordinated-vulnerability-disclosure-policy)
+- [Status](https://status.billie.io/)
+
+## API Evangelist rating
+
+**Kin Score 39.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 51.8 |
+| Contract quality | 67.9 |
+| Contract governance | 22.0 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 0.0 |
+
+**Agent readiness 39.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 29.5** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/billieio/](https://apis.io/providers/billieio/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Billieio: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/billieio/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
